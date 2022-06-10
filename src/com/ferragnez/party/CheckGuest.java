@@ -1,13 +1,17 @@
 package com.ferragnez.party;
 
+import java.util.Scanner;
+
 public class CheckGuest {
 
 	public static void main(String[] args) {
 		
-		
+		 String NomeRichiedente;
+		 
 		//creazione array con partecipanti
 		
-		String[] listaInvitati = new String [10];
+		
+		String[] listaInvitati = new String [11];
 		
 		listaInvitati[0] = ("Dua Lipa");
 		listaInvitati[1] = ("Paris Hilton");
@@ -21,8 +25,31 @@ public class CheckGuest {
 		listaInvitati[9] = ("Martina Maccherone");
 		listaInvitati[10] = ("Rachel Zeilic");
 		
+		Scanner scan = new Scanner(System.in) ;
+		System.out.println("Come ti chiami ?");
+		NomeRichiedente = scan.nextLine();
 		
-
+		boolean trovato = false;
+		int i = 0 ;
+		while(trovato == false && i < listaInvitati.length) {
+		
+			if(NomeRichiedente.equalsIgnoreCase(listaInvitati[i])) {
+			
+				trovato = true;
+			}
+			else {
+				i++;
+			}
+		
+		}
+		if (trovato) {
+		System.out.println("Perfetto puoi accedere alla festa");
+		}
+		else {
+		System.out.println("Torna a casa Plebeo");
+		}
+	
+	scan.close();
 	}
 
 }
