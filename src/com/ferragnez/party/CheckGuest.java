@@ -25,12 +25,17 @@ public class CheckGuest {
 		listaInvitati[9] = ("Martina Maccherone");
 		listaInvitati[10] = ("Rachel Zeilic");
 		
+		//apertura scanner
 		Scanner scan = new Scanner(System.in) ;
+		//richiesta all'utente
 		System.out.println("Come ti chiami ?");
+		//ricezione richiesta
 		NomeRichiedente = scan.nextLine();
-		
+		//flag per uscire dal while
 		boolean trovato = false;
+		//contenitore per collegare ogni indice della lista e farlo aumentare
 		int i = 0 ;
+		//while per far ripere il codice fino a che non si esce dalla condizione che abbiamo creato 
 		while(trovato == false && i < listaInvitati.length) {
 		
 			if(NomeRichiedente.equalsIgnoreCase(listaInvitati[i])) {
@@ -48,7 +53,7 @@ public class CheckGuest {
 		else {
 		System.out.println("Torna a casa Plebeo");
 		}
-	
+	//chiusura scanner
 	scan.close();
 	}
 
